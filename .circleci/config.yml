@@ -5,7 +5,7 @@ jobs:
       - image: nixos/nix:2.3
     steps:
       - restore_cache:
-          key:
+          keys:
             - nix-store
       - run: nix-env -i git ssh
       - checkout
