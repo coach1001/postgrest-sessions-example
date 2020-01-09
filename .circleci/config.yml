@@ -6,10 +6,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: nix-store--{{ .Branch }}-{{ checksum "shell.nix" }}
+          key: nix-store-{{ .Branch }}-{{ checksum "shell.nix" }}
       - run: nix-shell -v --run "echo hello from nix"
       - save_cache:
           paths:
             - /nix/
-          key: nix-store--{{ .Branch }}-{{ checksum "shell.nix" }}
+          key: nix-store-{{ .Branch }}-{{ checksum "shell.nix" }}
       - run: echo "hello world"
