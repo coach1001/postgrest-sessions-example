@@ -7,9 +7,9 @@ jobs:
       - checkout
       - restore_cache:
           key: nix-store-{{ .Branch }}-{{ checksum "shell.nix" }}
-      - run: nix-shell -v --run "echo hello from nix"
+      - run: nix-shell -v --run "echo loaded nix environment"
       - save_cache:
           paths:
             - /nix/
           key: nix-store-{{ .Branch }}-{{ checksum "shell.nix" }}
-      - run: echo "hello world"
+      - run: nix-shell --run ./speed.sh
