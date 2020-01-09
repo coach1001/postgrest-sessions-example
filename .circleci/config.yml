@@ -4,10 +4,12 @@ jobs:
     docker:
       - image: nixos/nix:2.3
     steps:
-      - checkout
       - restore_cache:
           key: nix-store
-      - run: nix-shell --run "exit"
+      - run: nix-env -i git openssh
+      - checkout
+      - run: git --help
+      - run: nix-shell --run "echo hello from nix"
       - save_cache:
           paths:
             - /nix/store
