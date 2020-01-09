@@ -1,8 +1,10 @@
 version: 2.1
 jobs:
   build:
-    docker: 
+    docker:
       - image: nixos/nix:2.3
     steps:
+      - nix-env -i git
       - checkout
+      - nix-shell --run "echo 'hi from nix-shell'"
       - run: echo "hello world"
