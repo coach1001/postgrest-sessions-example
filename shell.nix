@@ -4,7 +4,7 @@ let
       pinnedPkgs =
         builtins.fetchGit {
           name = "nixos-unstable-2019-12-05";
-          url = https://github.com/nixos/nixpkgs/;
+          url = "git@github.com:NixOS/nixpkgs.git";
           rev = "cc6cf0a96a627e678ffc996a8f9d1416200d6c81";
         };
     in
