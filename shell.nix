@@ -2,10 +2,10 @@ let
   pkgs =
     let
       pinnedPkgs =
-        builtins.fetchGit {
-          name = "nixos-unstable-2019-12-05";
-          url = "git@github.com:NixOS/nixpkgs.git";
-          rev = "cc6cf0a96a627e678ffc996a8f9d1416200d6c81";
+        builtins.fetchTarball {
+          name = "nixos-unstable-2020-01-02";
+          url = "https://github.com/nixos/nixpkgs/archive/7e8454fb856573967a70f61116e15f879f2e3f6a.tar.gz";
+          sha256 = "0lnbjjvj0ivpi9pxar0fyk8ggybxv70c5s0hpsqf5d71lzdpxpj8";
         };
     in
       import pinnedPkgs {};
