@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: nixos/nix:2.3
     steps:
-      - nix-env -i git
+      - run: nix-env -i git
       - checkout
-      - nix-shell --run "echo 'hi from nix-shell'"
+      - run: nix-shell --run "echo 'hi from nix-shell'"
       - run: echo "hello world"
