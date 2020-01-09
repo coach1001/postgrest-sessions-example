@@ -6,7 +6,7 @@ jobs:
     steps:
       - restore_cache:
           key: nix-store
-      - run: nix-env -i git openssh
+      - run: nix-env -i git openssh openssl
       - checkout
       - run: git --help
       - run: nix-shell -vvvv --run "echo hello from nix"
