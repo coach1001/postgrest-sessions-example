@@ -7,7 +7,7 @@ jobs:
       - restore_cache:
           keys:
             - nix-store
-      - run: nix-env -i git ssh
+      - run: nix-env -i git openssh
       - checkout
       - run: nix-shell --run "exit"
       - save_cache:
