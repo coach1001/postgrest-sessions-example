@@ -9,7 +9,7 @@ jobs:
       - run: nix-env -i git openssh
       - checkout
       - run: git --help
-      - run: nix-shell --run "echo hello from nix"
+      - run: nix-shell -vvvv --run "echo hello from nix"
       - save_cache:
           paths:
             - /nix/store
